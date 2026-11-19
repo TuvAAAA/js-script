@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Interaktiva knappar</title>
+</head>
+
+<body>
+    <h1>Interaktiva element</h1>
+    <p>Denna övning tränar dig på att styra webbsidans innehåll direkt via onclick och getElementById.</p>
+
+    <hr>
+
+    <h3>Del 1: Ändra text och rubriker</h3>
+    <h2 id="huvudrubrik">Välkommen till min sida</h2>
+    <p id="brodtext">Detta är ett stycke text.</p>
+
+    <button onclick="document.getElementById('huvudrubrik').textContent='TUVA!'; document.getElementById('brodtext').textContent='TACOS';">Ändra innehåll</button>
+    <button onclick="document.getElementById('huvudrubrik').textContent='Välkommen till min sida'; document.getElementById('brodtext').textContent='Detta är ett stycke text.'">Återställ</button>
+    <!-- 
+    **************************************************************************
+    UPPGIFT 1:
+    1. Ändra koden i knappen ovan så att rubriken ändras till ditt eget namn och brödtexten till din favoritmat.
+    2. Skapa en ny knapp som heter "Återställ" och som återställer både rubriken och brödtexten till deras ursprungliga texter.
+    **************************************************************************
+    -->
+
+    <hr>
+
+    <h3>Del 2: Använda innerHTML och HTML-taggar</h3>
+    <p id="styling">Här ska innehållet förändras med HTML-taggar.</p>
+
+    <button onclick="document.getElementById('styling').innerHTML='<b>Detta är fetstilad text!</b>';">
+        Gör fetstil
+    </button>
+    <button onclick="document.getElementById('styling').innerHTML = '<i>Detta är kursiv text</i>'">
+        Detta är curive text
+    </button>
+
+    <!-- 
+    **************************************************************************
+    UPPGIFT 2:
+    1. Hitta felet i HTML-koden som gör att vi inte kan ändra texten i p-taggen.
+    2. Ändra knappen så texten blir fetstil istället för att skriva ut html-taggen.
+    3. Skapa en knapp som byter ut texten i p-taggen mot en länk (en a-tagg) som leder till din favoritwebbplats.
+    4. Skapa en knapp som byter ut texten mot en kursiv text med hjälp av innerHTML och i-taggen.
+    **************************************************************************
+    -->
+
+    <hr>
+
+    <h3>Del 3: Styr flera element och egenskaper</h3>
+    <div id="box" style="border: 1px solid black; padding: 10px; margin-bottom: 10px;">
+        <p id="boxText">Detta är en informationsruta.</p>
+    </div>
+    <button onclick="document.getElementById('box').style.backgroundColor='lightblue'; document.getElementById('boxText').textContent = 'Systemt är igång'">
+        Starta
+    </button>
+    <button onclick="document.getElementById('box').style.backgroundColor='white'; document.getElementById('boxText').textContent = 'Detta är en informationsruta.'">
+        Stäng av
+    </button>
+
+    <!-- 
+    **************************************************************************
+    UPPGIFT 3:
+    1. Skapa en knapp med texten "Starta". När man klickar på den ska texten i rutan ändras till "Systemet är igång" och bakgrundsfärgen på div-elementet med id="box" ska ändras till ljusblå (tips: document.getElementById('box').style.backgroundColor='lightblue').
+    2. Skapa en till knapp med texten "Stäng av" som återställer texten och tar bort eller byter färg på rutan.
+    3. Utmaning: Skapa en knapp som utför tre olika ändringar på tre olika element samtidigt med en enda lång rad JavaScript i onclick.
+    **************************************************************************
+    -->
+    </body>
+
+</html>

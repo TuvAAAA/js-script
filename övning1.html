@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>JavaScript sist i body</h2>
+
+    <p>JavaScript kan ändra innehållet i en HTML-tag</p>
+  
+   <p id="test">
+
+        <!-- script-taggen där man lägger JavaScript-kod ska ligga sist i bodyn -->
+        <script>
+            // document.getElementById("demo") hämtar elementet med id:t demo
+            // När document.getElementById("demo").textContent tilldelas ett värde ändras elementets innehåll
+            document.getElementById("test").textContent = "JavaScript har ändrat texten i stycket!";
+        </script>
+    </p>
+</body>
+</html>
+
+<!--
+********************************************************
+script-taggen där man lägger JavaScript-kod ska ligga sist i bodyn.
+
+HTML-taggen <script> kan egentligen placeras var som helst i head eller body, men bör läggas sist i body.
+Det gör att tiden för att ladda koden görs sist, dvs efter att webbsidans synliga delar laddats.
+Det innebär att webbsidan blir snabbare synlig för användarna.
+HTML-taggen <script>, där man lägger JavaScript-kod bör alltså ligga sist i bodyn.
+
+JavaScript-koden körs direkt när webbläsaren läser in script-taggen.
+document.getElementById("demo") hämtar elementet med id demo.
+Alla id:n måste vara unika, så det kan bara finnas ett element (eller inget alls).
+När document.getElementById("demo").textContent tilldelas ett värde ändras elementets innehåll.
+
+ÖVNING: Ändra id-attributet på p-taggen från demo till test: <p id="test"></p>.
+Vad behöver du ändra mer för att koden ska fungera?
+********************************************************
+-->
