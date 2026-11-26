@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Interaktivt Visitkort</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+        .card {
+            background-color: rgb(255, 255, 255);
+            width: 320px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #3498db;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Färdiga CSS-klasser att aktivera med JavaScript */
+        .dark-mode {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .party-mode {
+            background-color: #e84393;
+            color: #ffeaa7;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="visitkort" class="card">
+        <div id="avatar" class="profile-img">🤖</div>
+        <h2 id="namn">Förnamn Efternamn</h2>
+        <p id="titel">Webbutvecklare i träning</p>
+        <p id="status">Status: Offline</p>
+        
+
+        <div class="btn-group">
+            <!-- Fyll i onclick-attributen och lägg till fler knappar enligt instruktionerna längst ner -->
+            <button onclick='document.getElementById("status").textContent = "Status:Online 🟢";'>Ändra Status</button>
+            <button onclick='document.getElementById("namn").textContent = "TUVA"; this.textContent = "Namn uppdaterat!";'>Byt Namn</button>
+            <button onclick='document.getElementById("visitkort").classList.toggle("dark-mode");'>Mörkt Tema</button>
+            <button onclick='document.getElementById("avatar").textContent = "🐒";'>Byt Avatar</button>
+            <button onclick='document.getElementById("titel").innerHTML = "<b><i>Kodexpert<i><b>";'>Styla titel</button>
+            <button onclick='document.getElementById("visitkort").classList.toggle("party-mode");'>Party mode</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--
+********************************************************************
+ÖVNING: DET INTERAKTIVA VISITKORTET
+
+Din uppgift är att göra visitkortet interaktivt genom att skriva 
+JavaScript-kod inuti knapparnas onclick-attribut.
+
+OBS 1! TÄNK PÅ CITATTECKNEN:
+Om du använder enkla citattecken runt hela attributet: onclick='...'
+så använder du dubbla citattecken inuti koden: "text" (eller tvärtom).
+exempel : 'this.innerHTML="v1"' eller "this.innerHTML='v2'"
+
+OBS 2! OM DU KÖR FAST:
+- De flesta svaren gick vi igenom under förra lektionen, titta i presentationen och
+  i materialet som finns under avsnittet "Kursverktyg" i Classroom.
+- I denna uppgift får du använda AI kod-coachen, ta hjälp av den om du kör fast.
+  Se instruktioner för den i Classroom.
+
+OBS 3! STÄNG AV AI-FUNKTIONERNA I VS-CODE
+Det är inte tillåtet att använda några auto-complete-funktioner (ex. inline suggestions)!!!
+
+GÖR FÖLJANDE STEG:
+
+1. Knapp 1 (Ändra Status):
+   När man klickar på knappen ska texten i p-taggen med id "status" 
+   ändras till "Status: Online 🟢".
+   Tips: document.getElementById("status").textContent = "..."
+
+2. Knapp 2 (Byt Namn):
+   När man klickar på knappen ska två saker hända:
+   - Texten i h2-taggen med id "namn" ska ändras till ditt eget namn.
+   - Själva knappen ska ändra sin text till "Namn uppdaterat!" med hjälp av this.textContent.
+   Tips: Separera de två instruktionerna med ett semikolon ( ; ).
+
+3. Knapp 3 (Mörkt Tema):
+   När man klickar på knappen ska kortet med id "visitkort" slå av och 
+   på CSS-klassen "dark-mode".
+   Tips: Använd .classList.toggle("dark-mode")
+
+4. Knapp 4 (Byt Avatar):
+   Gör så att emojin i div-elementet med id "avatar" byts ut från 🤖 
+   till en valfri annan emoji när man klickar på knappen.
+
+5. Skapa en femte knapp:
+   Lägg till en ny <button> inuti <div class="btn-group">, ge knappen ett passande namn (ex. Styla titel). 
+   När man klickar på den ska titeln (id="titel") ändras med .innerHTML 
+   så att texten får både fetstil och kursiv stil 
+   (t.ex. "<b><i>Kodexpert</i></b>").
+
+6. Skapa en sjätte knapp (Fest-tema):
+   Lägg till ytterligare en <button> inuti <div class="btn-group"> som 
+   slår av och på CSS-klassen "party-mode" på kortet med id "visitkort".
+********************************************************************
+-->
